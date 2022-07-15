@@ -17,5 +17,5 @@
     "moduleResolution": "node"
   },
   "include": ["src", "data/expectations.ts"],
-  "exclude": ["node_modules", "**/__tests__/*"]
+  "exclude": ["node_modules", "**/__tests__/*", "data"]
 }

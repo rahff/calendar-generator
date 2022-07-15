@@ -1,5 +1,5 @@
 {
-  "name": "calendar-provider",
+  "name": "calendos",
   "version": "1.0.0",
   "description": "A nice greeter",
   "main": "lib/index.js",
@@ -21,7 +21,7 @@
     "url": "git+https://github.com/rahff/calendar-generator.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rahff",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^28.1.5",
