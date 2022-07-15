@@ -1,6 +1,6 @@
 import { Calendar } from '../src/calendar';
-import { year } from '../src/data/index';
 import { januaryNextYearCalendar, Julycalendar, previousjanuary, septemberCalendar } from '../data/expectations';
+
 
 describe('Calendar', ()=>{
     let calendar: Calendar;
