@@ -15,4 +15,6 @@ export interface DateMetatada {
   isPassed: boolean;
   isToday: boolean;
   day: string;
+  mounth: string;
+  dateISOString: string;
 }

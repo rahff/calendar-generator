@@ -1,5 +1,5 @@
 import { year, week } from "./data";
-import { CalendarData, MounthMetadata } from "./interfaces";
+import { CalendarData, DateMetatada, MounthMetadata } from "./interfaces";
 
 export class Calendar {
   private currentMounth: number;
@@ -37,12 +37,7 @@ export class Calendar {
       const dateIndex = new Date(
         firstDayOfMounth.getTime() + this.DayInMilliSecond * index
       );
-      calendar.dates.push({
-        date: dateIndex.getUTCDate(),
-        isPassed: this.isPassedDate(dateIndex, mounthIndex),
-        isToday: this.isToday(dateIndex),
-        day: this.week[dateIndex.getDay()],
-      });
+      calendar.dates.push(this.getDateMetadata(dateIndex, mounthIndex));
     }
     return calendar;
   }
@@ -62,5 +57,16 @@ export class Calendar {
 
   private isToday(date: Date): boolean {
     return date.toDateString() === this.ctxDate.toDateString();
+  }
+
+  private getDateMetadata(date: Date, mounthIndex: number): DateMetatada {
+    return {
+      date: date.getUTCDate(),
+      isPassed: this.isPassedDate(date, mounthIndex),
+      isToday: this.isToday(date),
+      day: this.week[date.getDay()],
+      dateISOString: date.toISOString(),
+      mounth: this.year[date.getMonth()].index.toString(),
+    };
   }
 }
