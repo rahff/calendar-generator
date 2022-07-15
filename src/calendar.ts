@@ -7,27 +7,42 @@ export class Calendar {
     private currentDate: number;
     private DayInMilliSecond = 1000 * 60 * 60 * 24;
     private currentYear = new Date().getFullYear();
+    private week = week;
+    private year = year;
 
     constructor(private ctxDate: Date = new Date()){
         this.currentMounth = ctxDate.getMonth();
         this.currentDate = ctxDate.getDate();
     }
 
-    generateCalendarOfMounth(mounthIndex: number = this.currentMounth): CalendarData {
-        if(mounthIndex < this.currentMounth) ++ this.currentYear
+    public getCurrentMounth(): number {
+        return this.currentMounth;
+    }
+
+    public getCurrentDate(): number {
+        return this.currentDate;
+    }
+
+    public generateCalendarOfMounth(mounthIndex: number = this.currentMounth, forFuture: boolean = true): CalendarData {
+        if(mounthIndex < this.currentMounth && forFuture) ++ this.currentYear;
         const currentMounthMetada = this.getCurrentMonthMetadata(mounthIndex);
         const firstDayOfMounth = new Date(this.currentYear, mounthIndex, 1, 12);
-        const weekDayInOrder = week.slice(firstDayOfMounth.getDay()).concat(week.slice(0, firstDayOfMounth.getDay()))
+        const weekDayInOrder = this.week.slice(firstDayOfMounth.getDay()).concat(this.week.slice(0, firstDayOfMounth.getDay()));
         const calendar: CalendarData = { days: weekDayInOrder, dates: []};
         for (let index = 0; index < currentMounthMetada.days; index++) {
             const dateIndex = new Date(firstDayOfMounth.getTime() + (this.DayInMilliSecond * index))
-            calendar.dates.push({date: dateIndex.getUTCDate(), isPassed: this.isPassedDate(dateIndex, mounthIndex) , isToday: this.isToday(dateIndex), day: week[dateIndex.getDay()]})
+            calendar.dates.push({
+                date: dateIndex.getUTCDate(), 
+                isPassed: this.isPassedDate(dateIndex, mounthIndex) , 
+                isToday: this.isToday(dateIndex), 
+                day: this.week[dateIndex.getDay()]
+            })
         }
         return calendar;
     }
 
     private getCurrentMonthMetadata(mounthIndex: number = this.currentMounth): MounthMetadata {
-        return year[mounthIndex]
+        return this.year[mounthIndex];
     }
 
     private isPassedDate(date: Date, mounthIndex: number): boolean {

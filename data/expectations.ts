@@ -122,3 +122,45 @@ export const januaryNextYearCalendar = {
       { date: 31, isPassed: false, isToday: false, day: 'Mardi' }
     ]
 }
+
+export const previousjanuary = {
+  days: [
+    'Samedi',   'Dimanche',
+    'Lundi',    'Mardi',
+    'Mercredi', 'Jeudi',
+    'vendredi'
+  ],
+  dates: [
+    { date: 1, isPassed: false, isToday: false, day: 'Samedi' },
+    { date: 2, isPassed: false, isToday: false, day: 'Dimanche' },
+    { date: 3, isPassed: false, isToday: false, day: 'Lundi' },
+    { date: 4, isPassed: false, isToday: false, day: 'Mardi' },
+    { date: 5, isPassed: false, isToday: false, day: 'Mercredi' },
+    { date: 6, isPassed: false, isToday: false, day: 'Jeudi' },
+    { date: 7, isPassed: false, isToday: false, day: 'vendredi' },
+    { date: 8, isPassed: false, isToday: false, day: 'Samedi' },
+    { date: 9, isPassed: false, isToday: false, day: 'Dimanche' },
+    { date: 10, isPassed: false, isToday: false, day: 'Lundi' },
+    { date: 11, isPassed: false, isToday: false, day: 'Mardi' },
+    { date: 12, isPassed: false, isToday: false, day: 'Mercredi' },
+    { date: 13, isPassed: false, isToday: false, day: 'Jeudi' },
+    { date: 14, isPassed: false, isToday: false, day: 'vendredi' },
+    { date: 15, isPassed: false, isToday: false, day: 'Samedi' },
+    { date: 16, isPassed: false, isToday: false, day: 'Dimanche' },
+    { date: 17, isPassed: false, isToday: false, day: 'Lundi' },
+    { date: 18, isPassed: false, isToday: false, day: 'Mardi' },
+    { date: 19, isPassed: false, isToday: false, day: 'Mercredi' },
+    { date: 20, isPassed: false, isToday: false, day: 'Jeudi' },
+    { date: 21, isPassed: false, isToday: false, day: 'vendredi' },
+    { date: 22, isPassed: false, isToday: false, day: 'Samedi' },
+    { date: 23, isPassed: false, isToday: false, day: 'Dimanche' },
+    { date: 24, isPassed: false, isToday: false, day: 'Lundi' },
+    { date: 25, isPassed: false, isToday: false, day: 'Mardi' },
+    { date: 26, isPassed: false, isToday: false, day: 'Mercredi' },
+    { date: 27, isPassed: false, isToday: false, day: 'Jeudi' },
+    { date: 28, isPassed: false, isToday: false, day: 'vendredi' },
+    { date: 29, isPassed: false, isToday: false, day: 'Samedi' },
+    { date: 30, isPassed: false, isToday: false, day: 'Dimanche' },
+    { date: 31, isPassed: false, isToday: false, day: 'Lundi' }
+  ]
+}
