@@ -1,1 +1,3 @@
 node_modules
+.nycrc_output
+coverage

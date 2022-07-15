@@ -16,6 +16,6 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node"
   },
-  "include": ["src"],
+  "include": ["src", "data/expectations.ts"],
   "exclude": ["node_modules", "**/__tests__/*"]
 }

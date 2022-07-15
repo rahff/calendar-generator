@@ -1,0 +1,16 @@
+{
+    "exclude": [
+        "__tests__/**/*.ts",
+        "spec/**/*.ts",
+        "data/**./*.*"
+    ],
+    "include": [
+        "src/*.ts"
+    ],
+    "reporter": [
+        "html",
+        "text",
+        "text-summary"
+    ],
+    "all": true
+}
