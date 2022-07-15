@@ -1,7 +1,7 @@
 export interface MounthMetadata {
   name: string;
   short: string;
-  index: number;
+  index: string;
   days: number;
 }
 

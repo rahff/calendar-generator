@@ -39,6 +39,8 @@ export class Calendar {
       );
       calendar.dates.push(this.getDateMetadata(dateIndex, mounthIndex));
     }
+    console.log(calendar);
+    
     return calendar;
   }
 
@@ -66,7 +68,7 @@ export class Calendar {
       isToday: this.isToday(date),
       day: this.week[date.getDay()],
       dateISOString: date.toISOString(),
-      mounth: this.year[date.getMonth()].index.toString(),
+      mounth: this.year[date.getMonth()].index,
     };
   }
 }
