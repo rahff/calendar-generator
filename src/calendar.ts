@@ -2,16 +2,15 @@ import { year, week } from "./data";
 import { CalendarData, DateMetatada, MounthMetadata } from "./interfaces";
 
 export class Calendar {
-  private currentMounth: number;
-  private currentDate: number;
+  private currentMounth: number = 1;
+  private currentDate: number = 1;
   private DayInMilliSecond = 1000 * 60 * 60 * 24;
   private currentYear = new Date().getFullYear();
   private week = week;
   private year = year;
 
   constructor(private ctxDate: Date = new Date()) {
-    this.currentMounth = ctxDate.getMonth();
-    this.currentDate = ctxDate.getDate();
+    this.timeInitialization(ctxDate);
   }
 
   public getCurrentMounth(): number {
@@ -26,6 +25,7 @@ export class Calendar {
     mounthIndex: number = this.currentMounth,
     forFuture: boolean = true
   ): CalendarData {
+    this.timeInitialization(this.ctxDate);
     if (mounthIndex < this.currentMounth && forFuture) ++this.currentYear;
     const currentMounthMetada = this.getCurrentMonthMetadata(mounthIndex);
     const firstDayOfMounth = new Date(this.currentYear, mounthIndex, 1, 12);
@@ -39,9 +39,14 @@ export class Calendar {
       );
       calendar.dates.push(this.getDateMetadata(dateIndex, mounthIndex));
     }
-    console.log(calendar);
-    
     return calendar;
+  }
+
+  private timeInitialization(providedDate: Date = new Date()): void {
+    this.ctxDate = providedDate;
+    this.currentMounth = this.ctxDate.getMonth();
+    this.currentDate = this.ctxDate.getDate();
+    this.currentYear = this.ctxDate.getFullYear();
   }
 
   private getCurrentMonthMetadata(
@@ -68,7 +73,7 @@ export class Calendar {
       isToday: this.isToday(date),
       day: this.week[date.getDay()],
       dateISOString: date.toISOString(),
-      mounth: this.year[date.getMonth()].index,
+      mounth: this.year[mounthIndex].index,
     };
   }
 }
