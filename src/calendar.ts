@@ -32,8 +32,15 @@ export class Calendar {
     const weekDayInOrder = this.week
       .slice(firstDayOfMounth.getDay())
       .concat(this.week.slice(0, firstDayOfMounth.getDay()));
-    const calendar: CalendarData = { days: weekDayInOrder, dates: [] };
-    for (let index = 0; index < currentMounthMetada.days; index++) {
+      const calendar: CalendarData = { 
+        days: weekDayInOrder, dates: [], 
+        currentmounth: {
+          stringFormat: this.year[currentMounthMetada.index].name, 
+          numberFormat: currentMounthMetada.index
+        },
+        currentYear: this.currentYear
+      };
+      for (let index = 0; index < currentMounthMetada.days; index++) {
       const dateIndex = new Date(
         firstDayOfMounth.getTime() + this.DayInMilliSecond * index
       );
@@ -73,7 +80,12 @@ export class Calendar {
       isToday: this.isToday(date),
       day: this.week[date.getDay()],
       dateISOString: date.toISOString(),
-      mounth: this.year[mounthIndex].index,
+      mounth: this.getIndexMounthToString(mounthIndex),
     };
+  }
+
+  private getIndexMounthToString(mounthIndex: number): string {
+    ++mounthIndex;
+    return mounthIndex < 10 ? "0" + this.year[mounthIndex].index.toString() : this.year[mounthIndex].index.toString();
   }
 }

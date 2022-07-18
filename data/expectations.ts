@@ -254,7 +254,12 @@ export const Julycalendar = {
       dateISOString: '2022-07-31T10:00:00.000Z',
       mounth: '07'
     }
-  ]
+  ],
+  currentmounth: {
+    stringFormat: "Juillet", 
+    numberFormat: 6
+  },
+  currentYear: 2022
 }
 
 export const septemberCalendar =   {
@@ -505,7 +510,12 @@ export const septemberCalendar =   {
       dateISOString: '2022-09-30T10:00:00.000Z',
       mounth: '09'
     }
-  ]
+  ],
+  currentmounth: {
+    stringFormat: "Septembre", 
+    numberFormat: 8
+  },
+  currentYear: 2022
 }
 
 export const januaryNextYearCalendar =  {
@@ -764,10 +774,15 @@ export const januaryNextYearCalendar =  {
       dateISOString: '2023-01-31T11:00:00.000Z',
       mounth: '01'
     }
-  ]
+  ],
+  currentmounth: {
+    stringFormat: "Janvier", 
+    numberFormat: 0
+  },
+  currentYear: 2023
 }
 
-export const previousjanuary =     {
+export const previousjanuary = {
   days: [
     'Samedi',   'Dimanche',
     'Lundi',    'Mardi',
@@ -1023,5 +1038,10 @@ export const previousjanuary =     {
       dateISOString: '2022-01-31T11:00:00.000Z',
       mounth: '01'
     }
-  ]
+  ],
+  currentmounth: {
+    stringFormat: "Janvier", 
+    numberFormat: 0
+  },
+  currentYear: 2022
 }
