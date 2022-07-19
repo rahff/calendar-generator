@@ -1045,3 +1045,264 @@ export const previousjanuary = {
   },
   currentYear: 2022
 }
+
+export const decemberCalendar = {
+  days: [
+    'Jeudi',    'vendredi',
+    'Samedi',   'Dimanche',
+    'Lundi',    'Mardi',
+    'Mercredi'
+  ],
+  dates: [
+    {
+      date: 1,
+      isPassed: false,
+      isToday: false,
+      day: 'Jeudi',
+      dateISOString: '2022-12-01T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 2,
+      isPassed: false,
+      isToday: false,
+      day: 'vendredi',
+      dateISOString: '2022-12-02T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 3,
+      isPassed: false,
+      isToday: false,
+      day: 'Samedi',
+      dateISOString: '2022-12-03T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 4,
+      isPassed: false,
+      isToday: false,
+      day: 'Dimanche',
+      dateISOString: '2022-12-04T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 5,
+      isPassed: false,
+      isToday: false,
+      day: 'Lundi',
+      dateISOString: '2022-12-05T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 6,
+      isPassed: false,
+      isToday: false,
+      day: 'Mardi',
+      dateISOString: '2022-12-06T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 7,
+      isPassed: false,
+      isToday: false,
+      day: 'Mercredi',
+      dateISOString: '2022-12-07T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 8,
+      isPassed: false,
+      isToday: false,
+      day: 'Jeudi',
+      dateISOString: '2022-12-08T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 9,
+      isPassed: false,
+      isToday: false,
+      day: 'vendredi',
+      dateISOString: '2022-12-09T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 10,
+      isPassed: false,
+      isToday: false,
+      day: 'Samedi',
+      dateISOString: '2022-12-10T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 11,
+      isPassed: false,
+      isToday: false,
+      day: 'Dimanche',
+      dateISOString: '2022-12-11T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 12,
+      isPassed: false,
+      isToday: false,
+      day: 'Lundi',
+      dateISOString: '2022-12-12T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 13,
+      isPassed: false,
+      isToday: false,
+      day: 'Mardi',
+      dateISOString: '2022-12-13T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 14,
+      isPassed: false,
+      isToday: false,
+      day: 'Mercredi',
+      dateISOString: '2022-12-14T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 15,
+      isPassed: false,
+      isToday: false,
+      day: 'Jeudi',
+      dateISOString: '2022-12-15T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 16,
+      isPassed: false,
+      isToday: false,
+      day: 'vendredi',
+      dateISOString: '2022-12-16T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 17,
+      isPassed: false,
+      isToday: false,
+      day: 'Samedi',
+      dateISOString: '2022-12-17T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 18,
+      isPassed: false,
+      isToday: false,
+      day: 'Dimanche',
+      dateISOString: '2022-12-18T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 19,
+      isPassed: false,
+      isToday: false,
+      day: 'Lundi',
+      dateISOString: '2022-12-19T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 20,
+      isPassed: false,
+      isToday: false,
+      day: 'Mardi',
+      dateISOString: '2022-12-20T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 21,
+      isPassed: false,
+      isToday: false,
+      day: 'Mercredi',
+      dateISOString: '2022-12-21T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 22,
+      isPassed: false,
+      isToday: false,
+      day: 'Jeudi',
+      dateISOString: '2022-12-22T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 23,
+      isPassed: false,
+      isToday: false,
+      day: 'vendredi',
+      dateISOString: '2022-12-23T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 24,
+      isPassed: false,
+      isToday: false,
+      day: 'Samedi',
+      dateISOString: '2022-12-24T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 25,
+      isPassed: false,
+      isToday: false,
+      day: 'Dimanche',
+      dateISOString: '2022-12-25T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 26,
+      isPassed: false,
+      isToday: false,
+      day: 'Lundi',
+      dateISOString: '2022-12-26T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 27,
+      isPassed: false,
+      isToday: false,
+      day: 'Mardi',
+      dateISOString: '2022-12-27T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 28,
+      isPassed: false,
+      isToday: false,
+      day: 'Mercredi',
+      dateISOString: '2022-12-28T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 29,
+      isPassed: false,
+      isToday: false,
+      day: 'Jeudi',
+      dateISOString: '2022-12-29T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 30,
+      isPassed: false,
+      isToday: false,
+      day: 'vendredi',
+      dateISOString: '2022-12-30T11:00:00.000Z',
+      mounth: '11'
+    },
+    {
+      date: 31,
+      isPassed: false,
+      isToday: false,
+      day: 'Samedi',
+      dateISOString: '2022-12-31T11:00:00.000Z',
+      mounth: '11'
+    }
+  ],
+  currentmounth: { stringFormat: 'Décembre', numberFormat: 11 },
+  currentYear: 2022
+}

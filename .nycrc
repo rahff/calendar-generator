@@ -5,7 +5,7 @@
         "data/**./*.*"
     ],
     "include": [
-        "src/*.ts"
+        "src/**/*.ts"
     ],
     "reporter": [
         "html",

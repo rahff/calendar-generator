@@ -2,33 +2,21 @@ import { year, week } from "./data";
 import { CalendarData, DateMetatada, MounthMetadata } from "./interfaces";
 
 export class Calendar {
-  private currentMounth: number = 1;
-  private currentDate: number = 1;
+
+  private currentDate: number | null = null;
   private DayInMilliSecond = 1000 * 60 * 60 * 24;
-  private currentYear = new Date().getFullYear();
   private week = week;
   private year = year;
 
-  constructor(private ctxDate: Date = new Date()) {
-    this.timeInitialization(ctxDate);
+  constructor(private ctxDate: Date | null = null) {
+    if(this.ctxDate){
+      this.currentDate = this.ctxDate.getDate();
+    }
   }
 
-  public getCurrentMounth(): number {
-    return this.currentMounth;
-  }
-
-  public getCurrentDate(): number {
-    return this.currentDate;
-  }
-
-  public generateCalendarOfMounth(
-    mounthIndex: number = this.currentMounth,
-    forFuture: boolean = true
-  ): CalendarData {
-    this.timeInitialization(this.ctxDate);
-    if (mounthIndex < this.currentMounth && forFuture) ++this.currentYear;
+  public generateCalendarOfMounth(mounthIndex: number, year: number): CalendarData {
     const currentMounthMetada = this.getCurrentMonthMetadata(mounthIndex);
-    const firstDayOfMounth = new Date(this.currentYear, mounthIndex, 1, 12);
+    const firstDayOfMounth = new Date(year, mounthIndex, 1, 12);
     const weekDayInOrder = this.week
       .slice(firstDayOfMounth.getDay())
       .concat(this.week.slice(0, firstDayOfMounth.getDay()));
@@ -38,7 +26,7 @@ export class Calendar {
           stringFormat: this.year[currentMounthMetada.index].name, 
           numberFormat: currentMounthMetada.index
         },
-        currentYear: this.currentYear
+        currentYear: year
       };
       for (let index = 0; index < currentMounthMetada.days; index++) {
       const dateIndex = new Date(
@@ -49,28 +37,34 @@ export class Calendar {
     return calendar;
   }
 
-  private timeInitialization(providedDate: Date = new Date()): void {
-    this.ctxDate = providedDate;
-    this.currentMounth = this.ctxDate.getMonth();
-    this.currentDate = this.ctxDate.getDate();
-    this.currentYear = this.ctxDate.getFullYear();
-  }
-
   private getCurrentMonthMetadata(
-    mounthIndex: number = this.currentMounth
+    mounthIndex: number
   ): MounthMetadata {
     return this.year[mounthIndex];
   }
 
   private isPassedDate(date: Date, mounthIndex: number): boolean {
-    return this.currentDate > date.getDate() &&
-      mounthIndex === this.currentMounth
-      ? true
-      : false;
+    const dateRef = this.currentDate ? this.currentDate : null;
+    if(dateRef){
+      return dateRef > date.getDate() &&
+        mounthIndex === new Date().getMonth()
+        ? true
+        : false;
+    }else{
+      return new Date().getDate() > date.getDate() &&
+        mounthIndex === new Date().getMonth()
+        ? true
+        : false;
+    }
   }
 
   private isToday(date: Date): boolean {
-    return date.toDateString() === this.ctxDate.toDateString();
+    const dateRef = this.ctxDate ? this.ctxDate : null 
+    if(dateRef){
+      return date.toDateString() === dateRef.toDateString();
+    }else {
+      return date.toDateString() === new Date().toDateString();
+    }
   }
 
   private getDateMetadata(date: Date, mounthIndex: number): DateMetatada {
@@ -86,6 +80,6 @@ export class Calendar {
 
   private getIndexMounthToString(mounthIndex: number): string {
     ++mounthIndex;
-    return mounthIndex < 10 ? "0" + this.year[mounthIndex].index.toString() : this.year[mounthIndex].index.toString();
+    return mounthIndex < 10 ? "0" + this.year[mounthIndex].index.toString() : this.year[--mounthIndex].index.toString();
   }
 }
