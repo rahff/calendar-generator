@@ -11,7 +11,7 @@ export interface CalendarData {
   currentmounth: {
     stringFormat: string;
     numberFormat: number;
-  }
+  };
   currentYear: number;
 }
 

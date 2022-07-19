@@ -2,33 +2,36 @@ import { year, week } from "./data";
 import { CalendarData, DateMetatada, MounthMetadata } from "./interfaces";
 
 export class Calendar {
-
   private currentDate: number | null = null;
   private DayInMilliSecond = 1000 * 60 * 60 * 24;
   private week = week;
   private year = year;
 
   constructor(private ctxDate: Date | null = null) {
-    if(this.ctxDate){
+    if (this.ctxDate) {
       this.currentDate = this.ctxDate.getDate();
     }
   }
 
-  public generateCalendarOfMounth(mounthIndex: number, year: number): CalendarData {
+  public generateCalendarOfMounth(
+    mounthIndex: number,
+    year: number
+  ): CalendarData {
     const currentMounthMetada = this.getCurrentMonthMetadata(mounthIndex);
     const firstDayOfMounth = new Date(year, mounthIndex, 1, 12);
     const weekDayInOrder = this.week
       .slice(firstDayOfMounth.getDay())
       .concat(this.week.slice(0, firstDayOfMounth.getDay()));
-      const calendar: CalendarData = { 
-        days: weekDayInOrder, dates: [], 
-        currentmounth: {
-          stringFormat: this.year[currentMounthMetada.index].name, 
-          numberFormat: currentMounthMetada.index
-        },
-        currentYear: year
-      };
-      for (let index = 0; index < currentMounthMetada.days; index++) {
+    const calendar: CalendarData = {
+      days: weekDayInOrder,
+      dates: [],
+      currentmounth: {
+        stringFormat: this.year[currentMounthMetada.index].name,
+        numberFormat: currentMounthMetada.index,
+      },
+      currentYear: year,
+    };
+    for (let index = 0; index < currentMounthMetada.days; index++) {
       const dateIndex = new Date(
         firstDayOfMounth.getTime() + this.DayInMilliSecond * index
       );
@@ -37,20 +40,17 @@ export class Calendar {
     return calendar;
   }
 
-  private getCurrentMonthMetadata(
-    mounthIndex: number
-  ): MounthMetadata {
+  private getCurrentMonthMetadata(mounthIndex: number): MounthMetadata {
     return this.year[mounthIndex];
   }
 
   private isPassedDate(date: Date, mounthIndex: number): boolean {
     const dateRef = this.currentDate ? this.currentDate : null;
-    if(dateRef){
-      return dateRef > date.getDate() &&
-        mounthIndex === new Date().getMonth()
+    if (dateRef) {
+      return dateRef > date.getDate() && mounthIndex === new Date().getMonth()
         ? true
         : false;
-    }else{
+    } else {
       return new Date().getDate() > date.getDate() &&
         mounthIndex === new Date().getMonth()
         ? true
@@ -59,10 +59,10 @@ export class Calendar {
   }
 
   private isToday(date: Date): boolean {
-    const dateRef = this.ctxDate ? this.ctxDate : null 
-    if(dateRef){
+    const dateRef = this.ctxDate ? this.ctxDate : null;
+    if (dateRef) {
       return date.toDateString() === dateRef.toDateString();
-    }else {
+    } else {
       return date.toDateString() === new Date().toDateString();
     }
   }
@@ -80,6 +80,8 @@ export class Calendar {
 
   private getIndexMounthToString(mounthIndex: number): string {
     ++mounthIndex;
-    return mounthIndex < 10 ? "0" + this.year[mounthIndex].index.toString() : this.year[--mounthIndex].index.toString();
+    return mounthIndex < 10
+      ? "0" + this.year[mounthIndex].index.toString()
+      : this.year[--mounthIndex].index.toString();
   }
 }
